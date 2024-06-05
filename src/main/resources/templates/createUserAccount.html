@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create User</title>
+</head>
+<body>
+<form id="userForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+        <option value="OTHER">Other</option>
+    </select><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br>
+
+    <label for="accountCreationDate">Account Creation Date:</label>
+    <input type="datetime-local" id="accountCreationDate" name="accountCreationDate" required><br>
+
+    <button type="button" onclick="submitUserForm()">Submit</button>
+</form>
+
+<script>
+    function submitUserForm() {
+        const form = document.getElementById('userForm');
+        const formData = new FormData(form);
+
+        const ageEntry = formData.get('age');
+        const age = ageEntry !== null ? parseInt(ageEntry.value) : null;
+
+        const now = new Date().toISOString().slice(0, 19);
+
+        const userData = {
+            username: formData.get('username'),
+            password: formData.get('password'),
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            gender: formData.get('gender'),
+            age: age,
+            accountCreationDate: now,
+        };
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(userData)
+        };
+
+        fetch('http://localhost:8080/api/userManager/users', requestOptions)
+            .then(handleResponse)
+            .catch(handleError);
+    }
+
+    function handleResponse(response) {
+        return response.json().then(data => console.log(data));
+    }
+
+    function handleError(error) {
+        console.error('Error:', error);
+    }
+</script>
+</body>
+</html>

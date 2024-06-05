@@ -1,0 +1,12 @@
+INSERT INTO users_account (user_account_id, account_creation_date, age, email, first_name, gender, last_name, password, username) VALUES
+(1, '2024-06-05 12:00:00', 25, 'anna.nowak@example.com', 'Anna', 'FEMALE', 'Nowak', 'password123', 'nowy_user'),
+(2, '2024-06-05 12:00:00', 18, 'minimalny@example.com', NULL, 'MALE', NULL, 'haslo123', 'minimalny'),
+(3, '2024-06-05 12:00:00', 35, 'test.user+test@example.com', 'Test', 'OTHER', 'User', 'password123', 'user_special'),
+(4, '2024-06-05 12:00:00', 28, 'john.doe@example.com', 'John', 'MALE', 'Doe', 'bardzodlugiehaslo123456', 'user_long_password'),
+(5, '2024-06-05 12:00:00', 28, 'julia.smith@example.com', 'Julia', 'FEMALE', 'Smith', 'strongPassword', 'julia123'),
+(6, '2024-06-05 12:00:00', 30, 'new.user@example.com', 'New', 'MALE', 'User', 'strongPassword', 'new_user'),
+(7, '2024-06-05 12:00:00', 27, 'alice.johnson@example.com', 'Alice', 'FEMALE', 'Johnson', 'securePassword123', 'new_female_user'),
+(8, '2024-06-05 11:25:47', 0, 'test@example.com', 'test', 'OTHER', 'web', 'TestWeb123!', 'test_web'),
+(9, '2024-06-05 12:00:00', 26, 'john@example.com', 'Johnny', 'MALE', 'Deep', 'newjohny123!', 'example_user'),
+(10, '2024-06-05 12:00:00', 30, 'jan.kowalski@example.com', 'Jan', 'FEMALE', 'Kowalski', 'haslo123', 'nowy_uzytkownik'),
+(11, '2024-06-05 12:00:00', 35, 'taylor.smith@example.com', 'Taylor', 'OTHER', 'Smith', 'password123', 'new_other_user');
