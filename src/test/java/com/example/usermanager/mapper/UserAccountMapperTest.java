@@ -116,7 +116,7 @@ public class UserAccountMapperTest {
         userDto.setGender(Gender.MALE);
 
         // When
-        UserAccount user = userAccountMapper.mapUserDtoToUserWithDetails(userDto);
+        UserAccount user = userAccountMapper.mapUserAccountDtoToUser(userDto);
 
         // Then
         assertNotNull(user);
@@ -134,7 +134,7 @@ public class UserAccountMapperTest {
         user.setGender(Gender.MALE);
 
         // When
-        UserAccountDto userDto = userAccountMapper.mapUserAccountToUserDtoWithDetails(user);
+        UserAccountDto userDto = userAccountMapper.mapUserAccountToUserAccountDto(user);
 
         // Then
         assertNotNull(userDto);

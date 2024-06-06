@@ -91,7 +91,7 @@ public class UserAccountServiceTest {
         UserAccount userAccount = new UserAccount(null, "existing_username", "password", "firstName", "lastName", "email", Gender.MALE, 25, LocalDateTime.now());
 
         //when
-        when(userAccountRepository.isUsernameExists("existing_username")).thenReturn(true);
+        when(userAccountRepository.existsByUsername("existing_username")).thenReturn(true);
 
         //then
         assertThrows(IllegalArgumentException.class, () -> {

@@ -47,23 +47,5 @@ public class UserAccountMapperImpl implements UserAccountMapper {
                 .map(this::mapUserAccountToUserAccountDto)
                 .collect(Collectors.toList());
     }
-
-    @Override
-    public UserAccount mapUserDtoToUserWithDetails(UserAccountDto dto) {
-        return UserAccount.builder()
-                .id(dto.getId())
-                .age(dto.getAge())
-                .gender(dto.getGender())
-                .build();
-    }
-
-    @Override
-    public UserAccountDto mapUserAccountToUserDtoWithDetails(UserAccount userAccount) {
-        return UserAccountDto.builder()
-                .id(userAccount.getId())
-                .age(userAccount.getAge())
-                .gender(userAccount.getGender())
-                .build();
-    }
 }
 

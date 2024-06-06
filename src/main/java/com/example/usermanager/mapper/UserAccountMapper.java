@@ -11,8 +11,4 @@ public interface UserAccountMapper {
     UserAccountDto mapUserAccountToUserAccountDto(UserAccount userAccount);
 
     List<UserAccountDto> userListToUserDtoList(List<UserAccount> userAccountList);
-
-    UserAccount mapUserDtoToUserWithDetails(UserAccountDto userAccountDto);
-
-    UserAccountDto mapUserAccountToUserDtoWithDetails(UserAccount userAccount);
 }
